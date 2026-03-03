@@ -1,0 +1,15 @@
+<p><a href="/create/">+ Create a new team</a></p>
+<h1>Teams</h1>
+
+<ul>
+  {% for team in teams %}
+    <li>
+      <a href="/team/{{ team.id }}/">
+        <strong>{{ team.name }}</strong>
+      </a><br>
+      Department: {{ team.department }}<br>
+      Manager: {{ team.manager }}
+    </li>
+    <br>
+  {% endfor %}
+</ul>

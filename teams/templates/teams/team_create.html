@@ -1,0 +1,29 @@
+<h1>Create Team</h1>
+
+<form method="POST">
+  {% csrf_token %}
+
+  <p>
+    Name:<br>
+    <input type="text" name="name">
+  </p>
+
+  <p>
+    Department:<br>
+    <input type="text" name="department">
+  </p>
+
+  <p>
+    Manager:<br>
+    <input type="text" name="manager">
+  </p>
+
+  <p>
+    Description:<br>
+    <textarea name="description"></textarea>
+  </p>
+
+  <button type="submit">Create Team</button>
+</form>
+
+<p><a href="/">Back to list</a></p>

@@ -1,15 +1,26 @@
+<form method="GET">
+    <input type="text" name="q" placeholder="Search teams...">
+    <button type="submit">Search</button>
+</form>
+
 <p><a href="/create/">+ Create a new team</a></p>
 <h1>Teams</h1>
 
 <ul>
+{% if teams %}
   {% for team in teams %}
-    <li>
-      <a href="/team/{{ team.id }}/">
-        <strong>{{ team.name }}</strong>
-      </a><br>
-      Department: {{ team.department }}<br>
-      Manager: {{ team.manager }}
-    </li>
-    <br>
+    <li><a href="/team/{{ team.id }}/">
+    <strong>{{ team.name }}</strong>
+</a>
+<br>
+<a href="/team/{{ team.id }}/edit/">Edit</a>
+<br>
+<a href="/team/{{ team.id }}/delete/">Delete</a>
+<br>
+Department: {{ team.department }}<br>
+Manager: {{ team.manager }}
   {% endfor %}
+{% else %}
+<p>No teams found.</p>
+{% endif %}
 </ul>

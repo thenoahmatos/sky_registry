@@ -1,0 +1,11 @@
+<h1>Edit Team</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <p>Name:<br><input type="text" name="name" value="{{ team.name }}"></p>
+    <p>Department:<br><input type="text" name="department" value="{{ team.department }}"></p>
+    <p>Manager:<br><input type="text" name="manager" value="{{ team.manager }}"></p>
+    <button type="submit">Save Changes</button>
+</form>
+
+<p><a href="/">Back to Teams</a></p>
